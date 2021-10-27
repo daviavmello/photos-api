@@ -10,6 +10,11 @@ html {
   background: ${colors.background};
   margin: 2rem;
 h1 {
+  span {
+    font-weight: 400;
+    margin: 0;
+    display: inline-block;
+  }
   font-family: Arial, Helvetica, sans-serif;
   text-transform: capitalize;
   color: ${colors.primary};
@@ -27,10 +32,10 @@ h3 {
 @media (max-width: 767px) {
     html {
       h1 {
-        font-size: 20px;
+        font-size: 24px;
       }
       h3 {
-        font-size: 20px;
+        font-size: 24px;
       }
     }
 } 
@@ -42,7 +47,7 @@ h3 {
         font-size: 28px;
       } 
       h3 {
-        font-size: 20px;
+        font-size: 24px;
       }
     }
 }

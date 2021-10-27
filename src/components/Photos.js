@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 
 import { Modal } from "./Modal";
-import { colors } from "../style/Colors";
+// import { colors } from "../style/Colors";
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);

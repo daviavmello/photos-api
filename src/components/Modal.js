@@ -10,15 +10,13 @@ export const Modal = ({ obj, isModalOpen, setIsModalOpen }) => {
       {isModalOpen && (
         <Backdrop>
           <ModalWrapper>
-            <PhotoModal>
-              <Row justifyContent="space-between">
-                <h3>obj.title</h3>
-                <CloseIcon />
-              </Row>
-              <Row>
-                <Image src={obj.url} alt={obj.title} />
-              </Row>
-            </PhotoModal>
+            <Row justifyContent="space-between">
+              <h3>{obj.title}</h3>
+              <CloseIcon onClick={() => setIsModalOpen((state) => !state)} />
+            </Row>
+            <ImageContainer>
+              <Image src={obj.url} alt={obj.title} />
+            </ImageContainer>
           </ModalWrapper>
         </Backdrop>
       )}
@@ -43,11 +41,14 @@ const Row = styled.div`
   align-items: center;
   justify-content: ${(props) =>
     props.justifyContent ? props.justifyContent : "normal"};
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
 `;
 
 const ModalWrapper = styled.div`
-  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50vw;
   height: 70vh;
   margin: auto;
   padding: 2rem;
@@ -61,9 +62,14 @@ const ModalWrapper = styled.div`
     0px -10px 20px rgba(197, 202, 209, 0.56);
   border-radius: 2rem;
 `;
-const PhotoModal = styled.div``;
+const ImageContainer = styled.div`
+  width: 50vw;
+  height: 50vw;
+`;
 const Image = styled.img`
-  width: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const CloseIcon = styled(X)`

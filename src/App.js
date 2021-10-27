@@ -3,7 +3,10 @@ import Photos from "./components/Photos";
 
 const App = () => (
   <Fragment>
-    <h1>Photo card</h1>
+    <h1>
+      Photo
+      <span>Card</span>
+    </h1>
     <Photos />
   </Fragment>
 );
