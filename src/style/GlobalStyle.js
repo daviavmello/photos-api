@@ -8,24 +8,24 @@ const GlobalStyle = createGlobalStyle`
 }
 html {
   background: ${colors.background};
+  margin: 2rem;
 h1 {
-  font-family: "brandon-grotesque", sans-serif;
-  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
   color: ${colors.primary};
-  margin: 0;
+  margin: 1rem;
 }
 
 h3 {
-  font-family: "brandon-grotesque", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
   color: ${colors.primary};
-  line-height: 20px;
 }
 }
 
  /* Small devices (phones, up to 767px) */
 @media (max-width: 767px) {
     html {
-      margin: 1rem;
       h1 {
         font-size: 20px;
       }
@@ -38,7 +38,6 @@ h3 {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     html {
-      margin: 2rem;
       h1 {
         font-size: 28px;
       } 
@@ -51,7 +50,6 @@ h3 {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     html {
-      margin: 2rem 10vw;
       h1 {
         font-size: 32px;
       }

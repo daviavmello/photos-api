@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Photos from "./components/Photos";
 
-const App = () => {
-  return <>a</>;
-};
+const App = () => (
+  <Fragment>
+    <h1>Photo card</h1>
+    <Photos />
+  </Fragment>
+);
 
 export default App;
