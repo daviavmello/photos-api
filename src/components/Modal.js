@@ -7,13 +7,16 @@ import { X } from "react-feather";
 export const Modal = ({ obj, isModalOpen, setIsModalOpen }) => {
   return (
     <Fragment>
-      {true && (
+      {isModalOpen && (
         <Backdrop>
           <ModalWrapper>
             <PhotoModal>
-              <Row justifyContent="end">
+              <Row justifyContent="space-between">
                 <h3>obj.title</h3>
-                <X />
+                <CloseIcon />
+              </Row>
+              <Row>
+                <Image src={obj.url} alt={obj.title} />
               </Row>
             </PhotoModal>
           </ModalWrapper>
@@ -40,11 +43,12 @@ const Row = styled.div`
   align-items: center;
   justify-content: ${(props) =>
     props.justifyContent ? props.justifyContent : "normal"};
+  margin-bottom: 6rem;
 `;
 
 const ModalWrapper = styled.div`
-  width: 80vw;
-  height: 50vh;
+  width: 60vw;
+  height: 70vh;
   margin: auto;
   padding: 2rem;
   position: absolute;
@@ -58,3 +62,11 @@ const ModalWrapper = styled.div`
   border-radius: 2rem;
 `;
 const PhotoModal = styled.div``;
+const Image = styled.img`
+  width: auto;
+`;
+
+const CloseIcon = styled(X)`
+  cursor: pointer;
+  color: ${colors.primary};
+`;

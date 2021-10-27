@@ -7,7 +7,7 @@ import { colors } from "../style/Colors";
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [photoObj, setPhotoObj] = useState(null);
 
   useEffect(() => {
@@ -62,8 +62,6 @@ export default Photos;
 const PhotosWrapper = styled.div`
   display: flex;
   flex-flow: wrap;
-  /* background: ${(props) => (props.isModalOpen ? `${colors.primary}` : "none")};
-  opacity: ${(props) => (props.isModalOpen ? "0.4" : "0")}; */
 `;
 
 const Image = styled.img`
