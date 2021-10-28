@@ -27,6 +27,14 @@ h3 {
   color: ${colors.primary};
 }
 }
+html, body {
+    height:100%;
+}
+main {
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
 `;
 
 export default GlobalStyle;
