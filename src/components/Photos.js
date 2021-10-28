@@ -42,10 +42,11 @@ const Photos = () => {
           setIsModalOpen={setIsModalOpen}
         />
       )}
-      <PhotosWrapper>
+      <PhotosWrapper data-style="display: flex; flex-flow: wrap">
         {photos &&
           photos.map((v, i) => (
             <Image
+              data-style="flex: 1;"
               src={v.thumbnailUrl}
               alt={v.title}
               key={i}
@@ -68,4 +69,8 @@ const Image = styled.img`
   margin: 1rem;
   flex: 1 1 calc(20% - 2rem);
   cursor: pointer;
+  _:-ms-fullscreen,
+  :root .IE11-only-class {
+    flex-basis: calc(20% - 2rem);
+  }
 `;

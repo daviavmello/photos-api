@@ -11,9 +11,9 @@ export const Modal = ({ obj, isModalOpen, setIsModalOpen }) => {
     <Fragment>
       {isModalOpen && (
         <Backdrop>
-          <ModalWrapper>
+          <ModalWrapper data-style="display: flex; justify-content: space-between; flex-direction: row;">
             <Column tabletSize={6}>
-              <Row justifyContent="space-between">
+              <Row data-style="display: flex; flex-direction: row; justify-content: space-between;" justifyContent="space-between">
                 <h3>{obj.title}</h3>
                 <CloseIcon onClick={() => setIsModalOpen((state) => !state)} />
               </Row>
