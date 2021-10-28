@@ -63,6 +63,10 @@ export default Photos;
 const PhotosWrapper = styled.div`
   display: flex;
   flex-flow: wrap;
+  _:-ms-fullscreen,
+  :root .IE11-only-class {
+    flex-basis: 20%;
+  }
 `;
 
 const Image = styled.img`
