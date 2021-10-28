@@ -14,7 +14,7 @@ export const Column = ({ desktopSize, tabletSize, mobileSize, children }) => {
 };
 
 const ColumnStyle = styled.div`
-  align-self: center;
+  /* align-self: center; */
   @media (max-width: 767px) {
     width: ${(props) =>
       props.mobileSize ? (props.mobileSize / 12) * 100 : "100"}%;

@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import { colors } from "../style/Colors";
+import { Column } from "./Column";
 import { Description } from "./Description";
 import { X } from "react-feather";
 
@@ -11,14 +12,18 @@ export const Modal = ({ obj, isModalOpen, setIsModalOpen }) => {
       {isModalOpen && (
         <Backdrop>
           <ModalWrapper>
-            <Row justifyContent="space-between">
-              <h3>{obj.title}</h3>
-              <CloseIcon onClick={() => setIsModalOpen((state) => !state)} />
-            </Row>
-            <Description id={obj.id} />
-            <ImageContainer>
-              <Image src={obj.url} alt={obj.title} />
-            </ImageContainer>
+            <Column tabletSize={6}>
+              <Row justifyContent="space-between">
+                <h3>{obj.title}</h3>
+                <CloseIcon onClick={() => setIsModalOpen((state) => !state)} />
+              </Row>
+              <Description id={obj.id} />
+            </Column>
+            <Column tabletSize={6}>
+              <ImageContainer>
+                <Image src={obj.url} alt={obj.title} />
+              </ImageContainer>
+            </Column>
           </ModalWrapper>
         </Backdrop>
       )}
@@ -37,18 +42,8 @@ const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
 `;
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: initial;
-  justify-content: ${(props) =>
-    props.justifyContent ? props.justifyContent : "normal"};
-  /* margin-bottom: 6rem; */
-`;
-
 const ModalWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   margin: auto;
   padding: 2rem;
@@ -64,21 +59,33 @@ const ModalWrapper = styled.div`
 
   @media (max-width: 767px) {
     width: 50vw;
-    height: 70vh;
+    height: 50vh;
+    flex-direction: column;
   }
 
   @media (min-width: 768px) {
     width: 70vw;
-    height: 50vh;
+    height: fit-content;
+    flex-direction: row-reverse;
   }
 `;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: initial;
+  justify-content: ${(props) =>
+    props.justifyContent ? props.justifyContent : "normal"};
+  margin-bottom: 1rem;
+`;
+
 const ImageContainer = styled.div`
   @media (max-width: 767px) {
     width: 50vw;
   }
 
   @media (min-width: 768px) {
-    width: 30vw;
+    margin-right: 1rem;
   }
 `;
 const Image = styled.img`

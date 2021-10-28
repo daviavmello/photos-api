@@ -36,7 +36,7 @@ export const Description = ({ id }) => {
 };
 
 const Input = styled.textarea`
-  width: auto;
+  width: 100%;
   border: none;
   resize: none;
   box-sizing: border-box;
