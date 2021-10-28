@@ -64,7 +64,7 @@ const PhotosWrapper = styled.div`
     display: flex;
     flex-flow: wrap;
   } */
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { */
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -72,7 +72,7 @@ const PhotosWrapper = styled.div`
     -ms-grid-rows: 270px 270px 270px 270px;
     grid-template-rows: repeat(5, 200px);
     /* grid-gap: 30px; */
-  }
+  /* } */
 `;
 
 const Image = styled.img`
