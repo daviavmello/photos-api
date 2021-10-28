@@ -61,10 +61,10 @@ const Photos = () => {
 export default Photos;
 
 const PhotosWrapper = styled.div`
-  @supports not (-ms-high-contrast: none) {
+  /* @supports not (-ms-high-contrast: none) {
     display: flex;
     flex-flow: wrap;
-  }
+  } */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     display: -ms-grid;
     display: grid;
@@ -78,8 +78,8 @@ const PhotosWrapper = styled.div`
 
 const Image = styled.img`
   cursor: pointer;
-  @supports not (-ms-high-contrast: none) {
+  /* @supports not (-ms-high-contrast: none) {
     margin: 1rem;
     flex: 1 1 calc(20% - 2rem);
-  }
+  } */
 `;
