@@ -27,42 +27,6 @@ h3 {
   color: ${colors.primary};
 }
 }
-
- /* Small devices (phones, up to 767px) */
-@media (max-width: 767px) {
-    html {
-      h1 {
-        font-size: 24px;
-      }
-      h3 {
-        font-size: 24px;
-      }
-    }
-} 
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    html {
-      h1 {
-        font-size: 28px;
-      } 
-      h3 {
-        font-size: 24px;
-      }
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    html {
-      h1 {
-        font-size: 32px;
-      }
-      h3 {
-        font-size: 24px;
-      }
-    }
-}
 `;
 
 export default GlobalStyle;

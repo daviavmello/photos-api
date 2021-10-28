@@ -1,7 +1,8 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import { colors } from "../style/Colors";
+import { Description } from "./Description";
 import { X } from "react-feather";
 
 export const Modal = ({ obj, isModalOpen, setIsModalOpen }) => {
@@ -14,6 +15,7 @@ export const Modal = ({ obj, isModalOpen, setIsModalOpen }) => {
               <h3>{obj.title}</h3>
               <CloseIcon onClick={() => setIsModalOpen((state) => !state)} />
             </Row>
+            <Description id={obj.id} />
             <ImageContainer>
               <Image src={obj.url} alt={obj.title} />
             </ImageContainer>
@@ -38,7 +40,7 @@ const Backdrop = styled.div`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: initial;
   justify-content: ${(props) =>
     props.justifyContent ? props.justifyContent : "normal"};
   /* margin-bottom: 6rem; */
@@ -48,8 +50,6 @@ const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50vw;
-  height: 70vh;
   margin: auto;
   padding: 2rem;
   position: absolute;
@@ -58,13 +58,28 @@ const ModalWrapper = styled.div`
   right: 0;
   left: 0;
   background: ${colors.light};
-  box-shadow: 0px 25px 20px rgba(172, 168, 129, 0.4),
-    0px -10px 20px rgba(197, 202, 209, 0.56);
+  box-shadow: 0px 5px 10px rgba(172, 168, 129, 0.4),
+    0px -5px 10px rgba(172, 168, 129, 0.4);
   border-radius: 2rem;
+
+  @media (max-width: 767px) {
+    width: 50vw;
+    height: 70vh;
+  }
+
+  @media (min-width: 768px) {
+    width: 70vw;
+    height: 50vh;
+  }
 `;
 const ImageContainer = styled.div`
-  width: 50vw;
-  height: 50vw;
+  @media (max-width: 767px) {
+    width: 50vw;
+  }
+
+  @media (min-width: 768px) {
+    width: 30vw;
+  }
 `;
 const Image = styled.img`
   width: 100%;
@@ -75,4 +90,5 @@ const Image = styled.img`
 const CloseIcon = styled(X)`
   cursor: pointer;
   color: ${colors.primary};
+  min-width: 2rem;
 `;

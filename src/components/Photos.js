@@ -42,7 +42,7 @@ const Photos = () => {
           setIsModalOpen={setIsModalOpen}
         />
       )}
-      <PhotosWrapper opacity={isModalOpen}>
+      <PhotosWrapper>
         {photos &&
           photos.map((v, i) => (
             <Image
