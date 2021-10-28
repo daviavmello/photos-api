@@ -71,7 +71,7 @@ const PhotosWrapper = styled.div`
     grid-template-columns: repeat(5, 1fr);
     -ms-grid-rows: 270px 270px 270px 270px;
     grid-template-rows: repeat(5, 200px);
-    /* grid-gap: 30px; */
+    grid-gap: 30px;
   /* } */
 `;
 
