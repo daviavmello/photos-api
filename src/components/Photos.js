@@ -69,8 +69,4 @@ const Image = styled.img`
   margin: 1rem;
   flex: 1 1 calc(20% - 2rem);
   cursor: pointer;
-  _:-ms-fullscreen,
-  :root .IE11-only-class {
-    flex-basis: calc(20% - 2rem);
-  }
 `;

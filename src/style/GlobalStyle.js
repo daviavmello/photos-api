@@ -35,6 +35,10 @@ main {
     -webkit-flex: 1;
     flex: 1;
 }
+  _:-ms-fullscreen,
+  :root .IE11-only-class {
+    flex-basis: 20%;
+  }
 `;
 
 export default GlobalStyle;
