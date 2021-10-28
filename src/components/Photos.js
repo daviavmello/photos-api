@@ -42,11 +42,10 @@ const Photos = () => {
           setIsModalOpen={setIsModalOpen}
         />
       )}
-      <PhotosWrapper data-style="display: flex; flex-flow: wrap">
+      <PhotosWrapper>
         {photos &&
           photos.map((v, i) => (
             <Image
-              data-style="flex: 1;"
               src={v.thumbnailUrl}
               alt={v.title}
               key={i}
